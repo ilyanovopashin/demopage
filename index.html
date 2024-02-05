@@ -1,33 +1,40 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-
-  <title>Demo Page</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
+<title>Page Title</title>
 </head>
-
-<!-- webim button generation date: 2023-03-07 version: 10.4.71 -->
-<a class="webim_button" href="#" rel="webim"><img src="https://komusru001.webim.ru/button.php?location=testbot" border="0"/></a>
-<script type="text/javascript">
-
-  webim = {
-    accountName: "komusru001",
-    domain: "komusru001.webim.ru",
-    location: "testbot"
-  };
-  (function () {
-      var s = document.createElement("script");
-      s.type = "text/javascript";
-      s.src = "https://komusru001.webim.ru/js/button.js";
-      document.getElementsByTagName("head")[0].appendChild(s);
-  })();
+<body>
+<script src="https://livechatv2.chat2desk.com/packs/ie-11-support.js"></script>
+<script>
+  window.chat24_token = "9978e985476fb6cfa10d7916f6a6316e";
+  window.chat24_url = "https://livechatv2.chat2desk.com";
+  window.chat24_socket_url ="wss://livechatv2.chat2desk.com/widget_ws_new";
+  window.chat24_show_new_wysiwyg = "true";
+  window.chat24_static_files_domain = "https://storage.chat2desk.com/";
+  window.lang = "ru";
+  window.fetch("".concat(window.chat24_url, "/packs/manifest.json?nocache=").concat(new Date().getTime())).then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    var chat24 = document.createElement("script");
+    chat24.type = "text/javascript";
+    chat24.async = true;
+    chat24.src = "".concat(window.chat24_url).concat(data["application.js"]);
+    document.body.appendChild(chat24);
+  });
 </script>
-<!-- /webim button -->
+<script>
+  document.addEventListener('initialize_widget', () => {
+    const chat24 = document.querySelector('#chat24-root chat-24')
+
+    chat24.sendClientInfo({
+      name: 'Client name',
+      phone: 'Client phone',
+      customFields: {
+        m360_custom_id: 'custom user id test 20'
+      }
+    })
+  })
+</script>
+
 </body>
 </html>
