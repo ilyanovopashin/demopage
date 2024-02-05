@@ -5,6 +5,19 @@
 </head>
 <body>
 <script src="https://livechatv2.chat2desk.com/packs/ie-11-support.js"></script>
+  <script>
+  document.addEventListener('initialize_widget', () => {
+    const chat24 = document.querySelector('#chat24-root chat-24')
+
+    chat24.sendClientInfo({
+      name: 'Client name',
+      phone: 'Client phone',
+      customFields: {
+        m360_custom_id: 'custom user id test 20'
+      }
+    })
+  })
+</script>
 <script>
   window.chat24_token = "9978e985476fb6cfa10d7916f6a6316e";
   window.chat24_url = "https://livechatv2.chat2desk.com";
@@ -22,19 +35,7 @@
     document.body.appendChild(chat24);
   });
 </script>
-<script>
-  document.addEventListener('initialize_widget', () => {
-    const chat24 = document.querySelector('#chat24-root chat-24')
 
-    chat24.sendClientInfo({
-      name: 'Client name',
-      phone: 'Client phone',
-      customFields: {
-        m360_custom_id: 'custom user id test 20'
-      }
-    })
-  })
-</script>
 
 </body>
 </html>
