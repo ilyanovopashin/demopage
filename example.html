@@ -4,37 +4,11 @@
 <title>Page Title</title>
 </head>
 <body>
-<script src="https://livechatv2.chat2desk.com/packs/ie-11-support.js"></script>
 <script>
-  window.chat24_token = "9978e985476fb6cfa10d7916f6a6316e";
-  window.chat24_url = "https://livechatv2.chat2desk.com";
-  window.chat24_socket_url ="wss://livechatv2.chat2desk.com/widget_ws_new";
-  window.chat24_show_new_wysiwyg = "true";
-  window.chat24_static_files_domain = "https://storage.chat2desk.com/";
-  window.lang = "ru";
-  window.fetch("".concat(window.chat24_url, "/packs/manifest.json?nocache=").concat(new Date().getTime())).then(function (res) {
-    return res.json();
-  }).then(function (data) {
-    var chat24 = document.createElement("script");
-    chat24.type = "text/javascript";
-    chat24.async = true;
-    chat24.src = "".concat(window.chat24_url).concat(data["application.js"]);
-    document.body.appendChild(chat24);
-  });
+        (function(w,d,u){
+                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn-ru.bitrix24.ru/b28593968/crm/site_button/loader_1_y1165s.js');
 </script>
-<script>
-  document.addEventListener('initialize_widget', () => {
-    const chat24 = document.querySelector('#chat24-root chat-24')
-
-    chat24.sendClientInfo({
-      name: 'Client name',
-      phone: 'Client phone',
-      customFields: {
-        custom_id: 'test id 132523463'
-      }
-    })
-  })
-</script>
-
 </body>
 </html>
